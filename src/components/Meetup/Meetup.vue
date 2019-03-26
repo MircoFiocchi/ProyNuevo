@@ -5,8 +5,8 @@
         <v-card-title>
           <h6 class="primary--text">{{meetup.title}}</h6>
         </v-card-title>
-        <v-card-media src="meetup.imageUrl" height="400px"></v-card-media>
-        <v-card-media>
+        <v-card-img :src="meetup.imageUrl" height="400px"></v-card-img>
+        <v-card-img>
           <v-card-text>
             <div>{{meetup.date}} -</div>
             <div>
@@ -19,7 +19,7 @@
             <v-spacer></v-spacer>
             <v-btn class="primary">Register</v-btn>
           </v-card-actions>
-        </v-card-media>
+        </v-card-img>
       </v-flex>
     </v-layout>
   </v-container>

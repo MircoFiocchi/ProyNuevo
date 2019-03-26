@@ -6,11 +6,11 @@
           <v-container fluid>
             <v-layout>
               <v-flex xs md3>
-                <v-card-media :src="meetup.imageUrl">
+                <v-card-img :src="meetup.imageUrl">
                   <!-- Fijarse en store, porque usa imageUrl -->
                   height="130px"
                   >
-                </v-card-media>
+                </v-card-img>
               </v-flex>
               <v-flex xs7 sm8 md9>
                 <v-card-title>

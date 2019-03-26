@@ -20,32 +20,33 @@ export default new Router({
       component: Home
     },
     {
-      path: '/meetups', 
+      path: '/meetups',
       name: 'Meetups',
       component: Meetups
     },
     {
-      path: '/meetup/new', 
+      path: '/meetup/new',
       name: 'CreateMeetup',
       component: CreateMeetup
     },
     {
-      path: '/meetups/:id', 
+      path: '/meetups/:id',
       name: 'Meetups',
+      props: true,
       component: Meetup
     },
     {
-      path: '/profile', 
+      path: '/profile',
       name: 'Profile',
       component: Profile
     },
     {
-      path: '/signup', 
+      path: '/signup',
       name: 'Signup',
       component: Signup
     },
     {
-      path: '/signin', 
+      path: '/signin',
       name: 'Signin',
       component: Signin
     },

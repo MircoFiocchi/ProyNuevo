@@ -6,12 +6,14 @@ import router from './components/router/router'
 import store from './store'
 import 'vuetify/dist/vuetify.min.css'
 
+
 Vue.config.productionTip = false
 
 Vue.use(Vuetify)
 
 new Vue({
-  el: '#app', 
+  el: '#app',
   router,
-  render: h=> h(App)
+  store,
+  render: h => h(App)
 })

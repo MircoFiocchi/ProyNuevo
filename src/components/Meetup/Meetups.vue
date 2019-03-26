@@ -1,28 +1,28 @@
 <template>
   <v-container>
-    <v-layout row wrap>
+    <v-layout row wrap v-for="meetup in meetups" :key="meetup.id" class="mb-2">
       <v-flex xs12 sm10 md8 offset-md2>
         <v-card class="primary">
           <v-container fluid>
             <v-layout>
               <v-flex xs md3>
-                <v-card-media
-                  src="https://bucket3.glanacion.com/anexos/fotos/17/2894617w380.jpg"
+                <v-card-media :src="meetup.imageUrl">
+                  <!-- Fijarse en store, porque usa imageUrl -->
                   height="130px"
-                ></v-card-media>
+                  >
+                </v-card-media>
               </v-flex>
               <v-flex xs7 sm8 md9>
                 <v-card-title>
                   <div>
-                    <h5>My Meetupd</h5>
-                    <div>17th July 2017</div>
+                    <h5>{{meetup.title}}</h5>
+                    <div>{{meetup.date}}</div>
                   </div>
                 </v-card-title>
                 <v-card-actions>
-                    <v-btn flat to="/meetups/1"> 
-                        <v-icon left light>arrow_forward</v-icon>
-                        View Meetup
-                    </v-btn>
+                  <v-btn flat to="'/meetups/' + meetup.id">
+                    <v-icon left light>arrow_forward</v-icon>View Meetup
+                  </v-btn>
                 </v-card-actions>
               </v-flex>
             </v-layout>
@@ -32,3 +32,13 @@
     </v-layout>
   </v-container>
 </template>
+
+<script>
+export default {
+  computed: {
+    meetups() {
+      return this.$store.getters.loadedMeetups;
+    }
+  }
+};
+</script>
